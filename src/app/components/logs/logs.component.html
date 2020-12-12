@@ -1,0 +1,11 @@
+<ul class="list-group" *ngIf="logs?.length > 0">
+  <li
+    class="list-group-item d-flex justify-content-between align-items-center"
+    *ngFor="let log of logs"
+  >
+    <a (click)="onSelect(log)" href="#">{{ log.text }}</a>
+    <span class="log-date">{{ log.date | date: "short" }}</span>
+    <i class="fa fa-remove" (click)="onDelete(log)"></i>
+  </li>
+</ul>
+<h1 *ngIf="logs?.length === 0">no date found</h1>
